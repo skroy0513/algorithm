@@ -11,4 +11,12 @@ class Solution:
             print(i)
         print(answer)
 
-Solution().arrayPairSum([6,2,6,5,1,2])
+    def arrayPairSum2(self, nums: List[int]) -> int:
+        nums.sort()
+        answer = 0
+
+        for i, n in enumerate(nums):
+            if i % 2 == 0:
+                answer += n
+        print(answer)
+Solution().arrayPairSum2([6,2,6,5,1,2])
