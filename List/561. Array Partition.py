@@ -19,4 +19,7 @@ class Solution:
             if i % 2 == 0:
                 answer += n
         print(answer)
+
+    def arrayPairSum3(self, nums: List[int]) -> int:
+        return sum(sorted(nums)[::2])
 Solution().arrayPairSum2([6,2,6,5,1,2])
