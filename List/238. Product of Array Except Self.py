@@ -12,6 +12,17 @@ class Solution:
             answer.append(int(mul))
         print(answer)
         return answer
+    def productExceptSelf2(self, nums: List[int]) -> List[int]:
+        answer = []
+        p = 1
+        for i in nums:
+            answer.append(p)
+            p = p * i
+        p = 1
+        for i in range(len(nums) - 1, -1, -1):
+            answer[i] = answer[i] * p
+            p = p * nums[i]
+        print(answer)
+        return answer
 
-
-Solution().productExceptSelf([-1, 1, 0., -3,3])
+Solution().productExceptSelf2([1, 2, 3, 4])
