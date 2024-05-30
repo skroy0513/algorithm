@@ -1,3 +1,4 @@
+import collections
 from typing import Optional
 
 
@@ -19,6 +20,22 @@ class Solution:
 
         while len(list) > 1:
             if list.pop(0) != list.pop():
+                return False
+
+        return True
+
+    def isPalindrome2(self, head: Optional[ListNode]) -> bool:
+        if not head:
+            return True
+
+        deque = collections.deque()
+        sample = head
+        while sample:
+            deque.append(sample.val)
+            sample = sample.next
+
+        while len(deque) > 1:
+            if deque.popleft() != deque.pop():
                 return False
 
         return True
