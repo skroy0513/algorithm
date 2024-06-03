@@ -8,11 +8,11 @@ class ListNode:
 
 class Solution:
     def mergeTwoLists(self, list1: Optional[ListNode], list2: Optional[ListNode]) -> Optional[ListNode]:
-        # if not list1 and not list2:
-        #     return None
-        # elif not list1 or not list2:
-        #     return list2 or list1
-        # else:
+        if not list1 and not list2:
+            return None
+        elif not list1 or not list2:
+            return list2 or list1
+        else:
             answer = temp = ListNode(0)
             while list1 and list2:
                 if list1.val < list2.val:
@@ -28,7 +28,7 @@ class Solution:
             else:
                 temp.next = list2
 
-            return answer.next
+        return answer.next
 
 list1 = ListNode(1, 3)
 list2 = ListNode(1, 2)
