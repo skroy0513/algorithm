@@ -16,9 +16,13 @@ class Solution:
             head = head.next
         array.append(head.val)
         array.reverse()
-        answer = ListNode()
-        answer.next = array
-        return answer.next
+        temp = answer = ListNode(0)
+        for i in array:
+            answer.next = ListNode(i)
+            answer = answer.next
+            print(answer.val)
+        print(answer)
+        return temp.next
 
     def reverseList2(self, head: Optional[ListNode]) -> Optional[ListNode]:
         node, prev = head, None
@@ -29,4 +33,4 @@ class Solution:
         return prev
 
 head = ListNode(1, ListNode(2, ListNode(3, ListNode(4))))
-Solution().reverseList2(head)
+Solution().reverseList(head)
