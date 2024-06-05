@@ -29,8 +29,9 @@ class Solution:
         while node:
             next, node.next = node.next, prev
             prev, node = node, next
+        print(prev.val)
 
         return prev
 
 head = ListNode(1, ListNode(2, ListNode(3, ListNode(4))))
-Solution().reverseList(head)
+Solution().reverseList2(head)
